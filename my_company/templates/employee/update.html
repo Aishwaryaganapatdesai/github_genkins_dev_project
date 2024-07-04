@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{%extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock%}
+<div class="container" align="center">
+    <h1> Insert New Employee Record</h1>
+    <form method="POST">
+    Emp id :<input type="text" name="eid" value="{{emp.eid}}">
+        <br><br>
+    Emp Name :<input type="text" name="ename" value="{{emp.ename}}">
+    <br><br>
+        Emp Sal :<input type="text" name="esal" value="{{emp.esal}}">
+    <br><br>
+        Emp City :<input type="text" name="ecity" value="{{emp.ecity}}">
+    <br><br>
+        Emp Email :<input type="text" name="eemail" value="{{emp.eemail}}">
+    <br><br>
+        Emp Department :<input type="text" name="edept" value="{{emp.edept}}">
+<br><br>
+        {%csrf_token%}
+        <input type="submit" value="update" name="" class="btn btn-primary" >
+    </form>
+
+</div>
+{%endblock%}
+</body>
+</html>

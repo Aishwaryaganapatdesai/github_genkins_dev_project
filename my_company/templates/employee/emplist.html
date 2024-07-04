@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock %}
+<div class="container" align="center">
+    <h1> Employee List</h1>
+    {% if objects %}
+    <table   class="table table-bordered" cellspacing="auto">
+        <thead border ="1px">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Sal</th>
+        <th>City</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th> Edit</th>
+
+        </thead>
+        {% for obj in objects %}
+        <tr >
+            <td>{{obj.eid}}</td>
+            <td>{{obj.ename}}</td>
+            <td>{{obj.esal}}</td>
+            <td>{{obj.ecity}}</td>
+            <td>{{obj.eemail}}</td>
+            <td>{{obj.edept}}</td>
+            <td><a href="/update/{{obj.eid}}" class="btn btn-primary" >Update</a>
+            <a href="/delete/{{obj.eid}}" class="btn btn-primary" >Delete</a>
+            </td>
+
+        </tr>
+        {% endfor%}
+    </table>
+
+    {%else%}
+    <h1> No Data Found</h1>
+
+{%endif%}
+<a href="/insert/" class="btn btn-primary" >Insert Record</a>
+</div>
+
+{%endblock%}
+</body>
+</html>
